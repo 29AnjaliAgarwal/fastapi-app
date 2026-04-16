@@ -24,13 +24,12 @@ app = FastAPI(
     title="Bookly",
     description=description,
     version=version,
-    license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
+   
     contact={
-        "name": "Ssali Jonathan",
-        "url": "https://github.com/jod35",
-        "email": "ssalijonathank@gmail.com",
+        "name": "Anjali",
+        "url": "https://github.com/29AnjaliAgarwal",
+        "email": "anjali.ag0229@gmail.com",
     },
-    terms_of_service="httpS://example.com/tos",
     openapi_url=f"{version_prefix}/openapi.json",
     docs_url=f"{version_prefix}/docs",
     redoc_url=f"{version_prefix}/redoc"
