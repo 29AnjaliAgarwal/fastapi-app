@@ -5,7 +5,7 @@ from src.reviews.routes import review_router
 from src.tags.routes import tags_router
 from .errors import register_all_errors
 from .middleware import register_middleware
-
+from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
 version = "v1"
 
@@ -34,7 +34,15 @@ app = FastAPI(
     docs_url=f"{version_prefix}/docs",
     redoc_url=f"{version_prefix}/redoc"
 )
-
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=[
+        "fastapi-bookly-app-1037152109346.asia-south1.run.app",
+        "localhost",
+        "127.0.0.1",
+       "*.run.app",
+    ]
+)
 register_all_errors(app)
 
 register_middleware(app)
