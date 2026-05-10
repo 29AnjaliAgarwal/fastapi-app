@@ -36,12 +36,7 @@ app = FastAPI(
 )
 app.add_middleware(
     TrustedHostMiddleware,
-    allowed_hosts=[
-        "fastapi-bookly-app-1037152109346.asia-south1.run.app",
-        "localhost",
-        "127.0.0.1",
-       "*.run.app",
-    ]
+    allowed_hosts=["*"]  
 )
 register_all_errors(app)
 
