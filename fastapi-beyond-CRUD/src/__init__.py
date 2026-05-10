@@ -34,10 +34,10 @@ app = FastAPI(
     docs_url=f"{version_prefix}/docs",
     redoc_url=f"{version_prefix}/redoc"
 )
-app.add_middleware(
-    TrustedHostMiddleware,
-    allowed_hosts=["*"]  
-)
+#app.add_middleware(
+ #   TrustedHostMiddleware,
+  #  allowed_hosts=["*"]  
+#)
 register_all_errors(app)
 
 register_middleware(app)
