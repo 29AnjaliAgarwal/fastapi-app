@@ -34,10 +34,9 @@ app = FastAPI(
     docs_url=f"{version_prefix}/docs",
     redoc_url=f"{version_prefix}/redoc"
 )
-#app.add_middleware(
- #   TrustedHostMiddleware,
-  #  allowed_hosts=["*"]  
-#)
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Bookly API", "docs": "/api/v1/docs"}
 register_all_errors(app)
 
 register_middleware(app)
